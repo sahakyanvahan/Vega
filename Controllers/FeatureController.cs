@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +26,11 @@ namespace Vega.Controllers
         {
             var features = await _context.Features.ToListAsync();
             return _mapper.Map<List<Feature>, List<FeatureResource>>(features);
+        }
+
+        public IActionResult GetCrap()
+        {
+            return Ok();
         }
     }
 }
